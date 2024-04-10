@@ -3,8 +3,8 @@ public class DiscreteMaths {
     public DiscreteMaths() {
     }
 
-    public int sumX(double[] x) {
-        int totalX = 0;
+    public double sumX(double[] x) {
+        double totalX = 0;
 
         for (int i = 0; i < x.length; i++)
             totalX += x[i];
@@ -12,8 +12,8 @@ public class DiscreteMaths {
         return totalX;
     }
 
-    public int sumY(double[] y) {
-        int totalY = 0;
+    public double sumY(double[] y) {
+        double totalY = 0;
 
         for (int i = 0; i < y.length; i++)
             totalY += y[i];
@@ -21,8 +21,8 @@ public class DiscreteMaths {
         return totalY;
     }
 
-    public int sumXY(double[] x, double[] y) {
-        int totalXY = 0;
+    public double sumXY(double[] x, double[] y) {
+        double totalXY = 0;
 
         for (int i = 0; i < x.length; i++)
             totalXY += x[i] * y[i];
@@ -30,8 +30,8 @@ public class DiscreteMaths {
         return totalXY;
     }
 
-    public int sumXSquare(double[] x) {
-        int totalXSquare = 0;
+    public double sumXSquare(double[] x) {
+        double totalXSquare = 0;
 
         for (int i = 0; i < x.length; i++)
             totalXSquare += x[i] * x[i];
@@ -39,23 +39,30 @@ public class DiscreteMaths {
         return totalXSquare;
     }
 
-    public int sumXCube(double[] x) {
-        int totalXCube = 0;
+    public double sumXCubic(double[] x) {
+        double totalXCubic = 0;
 
         for (int i = 0; i < x.length; i++)
-            totalXCube += x[i] * x[i] * x[i];
+            totalXCubic += Math.pow(x[i], 3);
 
-        return  totalXCube;
+        return totalXCubic;
     }
 
-    public int sumXSquareY(double[] x, double[] y) {
-        int totalXSquareY = 0;
+    public double sumXSquareY(double[] x, double[] y) {
+        double totalXSquareY = 0;
 
         for (int i = 0; i< x.length; i++)
             totalXSquareY += x[i] * x[i] * y[i];
 
         return totalXSquareY;
     }
+    public double sumXQuartic(double[] x) {
+        double totalXQuartic = 0;
+
+        for (int i = 0; i < x.length; i++)
+            totalXQuartic += Math.pow(x[i], 4);
+
+        return totalXQuartic;
+    }
 
 }
-
