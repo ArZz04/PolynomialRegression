@@ -5,7 +5,5 @@ public class Main {
         double[] xData = ds.getX();
         double[] yData = ds.getY();
 
-
-
     }
 }
