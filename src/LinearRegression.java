@@ -1,7 +1,11 @@
-public class SimpleLinearRegression {
+public class LinearRegression {
 
     private double intercept;   // es lo mismo a B0
     private double slope;       // es lo mismo a B1
+
+    public LinearRegression() {
+        // Constructor empty
+    }
 
     public void fit(double[] x, double[] y) {
         int n = x.length;
@@ -30,13 +34,13 @@ public class SimpleLinearRegression {
         return intercept;
     }
 
-    public static void calculateSimpleLinearRegression(int newXLinear) {
+    public static double[] calculateSimpleLinearRegression(double newXLinear) {
         DataSet ds = new DataSet();
         double[] xData = ds.getX();
         double[] yData = ds.getY();
 
         // Calcular la regresión lineal simple
-        SimpleLinearRegression linearRegression = new SimpleLinearRegression();
+        LinearRegression linearRegression = new LinearRegression();
         linearRegression.fit(xData, yData);
 
         // Obtener los coeficientes de la regresión lineal
@@ -44,12 +48,9 @@ public class SimpleLinearRegression {
         double slopeLinear = linearRegression.getSlope(); // B1
 
         // Predecir el valor de Y para un nuevo valor de X usando regresión lineal
-        double predictedYLinear = linearRegression.predict(newXLinear);
+        //double predictedYLinear = linearRegression.predict(newXLinear);
 
-        // Imprimir la ecuación de regresión lineal
-        System.out.println("Ecuación de regresión lineal: ŷ = " + interceptLinear + " (B0) + " + slopeLinear + " (B1) * " + newXLinear + "(X)");
+        return new double[] {interceptLinear, slopeLinear}; // BO y B1
 
-        // Imprimir la prediccion de regresión lineal
-        System.out.println("Predicción lineal para X = " + newXLinear + ": Y = " + predictedYLinear);
     }
 }
